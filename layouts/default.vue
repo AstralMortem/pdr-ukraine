@@ -2,17 +2,21 @@
 import type { INavBarLink } from '~/types'
 
 const links = [{
-  label: 'link',
+  label: 'Дім',
   path: '/',
-  icon: '',
+  icon: 'ph:house',
+}, {
+  label: 'Теорія ПДР',
+  path: '/theory',
+  icon: 'ph:book',
 }] as INavBarLink[]
 </script>
 
 <template>
-  <div class="flex flex-col justify-start items-start w-screen h-full">
+  <UIContainer>
     <NavBar :links="links" />
     <slot />
-  </div>
+  </UIContainer>
 </template>
 
 <style></style>
