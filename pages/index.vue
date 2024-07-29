@@ -1,10 +1,13 @@
 <script lang="ts" setup>
-
+const f = ref('f')
+watch(f, () => {
+  console.log(f.value)
+})
 </script>
 
 <template>
   <div class="w-full h-full">
-    <UIInput color="accent" />
+    <UIInput v-model="f" color="accent" />
   </div>
 </template>
 

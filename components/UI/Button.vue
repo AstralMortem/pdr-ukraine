@@ -26,6 +26,10 @@ const props = defineProps({
   size: {
     type: String,
   },
+  type: {
+    type: String,
+    default: 'button',
+  },
 
 })
 
@@ -71,16 +75,16 @@ const isBlock = computed(() => props.block ? 'btn-block' : '')
 </script>
 
 <template>
-  <button class="btn flex flex-row justify-center items-center" :disabled="$props.disabled" :class="[compSize, compColor, compVariant, isWide, isBlock]">
-    <div v-if="$props.leadingIcon || $props.loading">
+  <button :type="$props.type" class="btn flex flex-row justify-center items-center" :disabled="$props.disabled" :class="[compSize, compColor, compVariant, isWide, isBlock]">
+    <div v-if="$props.leadingIcon || $props.loading" class="flex items-center">
       <span v-if="$props.loading" class="loading loading-spinner" />
-      <UIIcon v-else :name="$props.leadingIcon" />
+      <UIIcon v-else :name="$props.leadingIcon" size="2em" />
     </div>
 
     <slot v-if="!$props.label" />
     <span v-else>{{ $props.label }}</span>
 
-    <div v-if="$props.trailingIcon">
+    <div v-if="$props.trailingIcon" class="flex items-center">
       <UIIcon :name="$props.trailingIcon" />
     </div>
   </button>

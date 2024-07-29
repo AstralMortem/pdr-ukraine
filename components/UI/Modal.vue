@@ -5,7 +5,8 @@ defineProps({
     default: false,
   },
   backArrow: {
-    type: Function,
+    type: Boolean,
+    default: false,
   },
   title: {
     type: String,
@@ -29,7 +30,7 @@ function closeModal() {
       </p>
       <div v-else class="flex flex-col justify-start items-start w-full h-full">
         <div class="flex flex-row items-center justify-between  w-full">
-          <UIIcon v-if="$props.backArrow" name="ph:arrow-left" class="self-start" @click="$props.backArrow(); $emit('backArrow')" />
+          <UIIcon v-if="$props.backArrow" name="ph:arrow-left" class="self-start" as-button @click="model = false; $emit('backArrow')" />
           <h2 v-if="title" class="text-3xl ">
             {{ $props.title }}
           </h2>
