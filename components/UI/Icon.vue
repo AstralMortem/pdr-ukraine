@@ -10,7 +10,7 @@ defineProps({
   },
   color: {
     type: String,
-    default: 'text-primary',
+
   },
   asButton: {
     type: Boolean,
@@ -20,7 +20,7 @@ defineProps({
 </script>
 
 <template>
-  <Icon v-if="!$props.asButton" :name="$props.name" :size="$props.size" :class="color" />
+  <Icon v-if="!$props.asButton" :name="$props.name" :size="$props.size" :class="[color]" />
   <UIButton v-else :trailing-icon="$props.name" size="sm" />
 </template>
 
