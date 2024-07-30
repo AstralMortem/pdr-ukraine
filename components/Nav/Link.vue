@@ -10,7 +10,7 @@ defineProps({
 </script>
 
 <template>
-  <NuxtLink class="link" active-class="link-primary" :to="$props.link.path">
+  <NuxtLink :to="$props.link.path" class="btn btn-md" active-class="btn-accent">
     {{ $props.link.label }}
   </NuxtLink>
 </template>
