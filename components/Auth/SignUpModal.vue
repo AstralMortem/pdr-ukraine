@@ -18,17 +18,17 @@ const schema = z.object({
 <template>
   <UIModal v-model:show="model" title="Реєстрація" back-arrow @back-arrow="$emit('goBack')">
     <div class="flex flex-col items-center w-full gap-2 justify-center">
-      <UIForm :schema="schema">
+      <UIForm :schema="schema" class="w-full flex flex-col justify-center items-center">
         <UIInput label="First name" name="first_name" />
         <UIInput label="Last name" name="last_name" />
         <UIInput label="E-mail" name="email" type="email" />
         <UIInput label="Password" name="password1" type="password" />
         <UIInput label="Confirm password" name="password2" type="password" />
-        <UIButton type="submit" label="Sign Up" />
+        <UIButton type="submit" label="Sign Up" wide color="primary" />
         <p>Already have account? <span class="link link-primary">Вхід</span></p>
       </UIForm>
       <UIDivider text="Або увійти через" />
-      <div class="flex flex-row justify-center items-center gap-4">
+      <div class="flex flex-col md:flex-row justify-center items-center gap-4">
         <UIButton leading-icon="ph:google-logo" color="error" label="Увійти через Google" />
         <UIButton leading-icon="ph:facebook-logo" color="info" label="Увійти через Facebook" />
       </div>

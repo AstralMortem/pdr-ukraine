@@ -15,7 +15,9 @@ const links = [{
 <template>
   <UIContainer>
     <NavBar :links="links" />
-    <slot />
+    <div class="w-full h-full mt-3">
+      <slot />
+    </div>
   </UIContainer>
 </template>
 

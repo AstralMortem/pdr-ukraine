@@ -1,20 +1,24 @@
 <script lang="ts" setup>
 const userStore = useUserStore()
-const { isAuthenticated } = storeToRefs(userStore)
+const { isAuthenticated, user } = storeToRefs(userStore)
 const showLogin = ref(false)
 const showSignUp = ref(false)
 const showPasswordChange = ref(false)
-
-function replaceModal(modalToggler: Ref) {
-  modalToggler = true
-}
 </script>
 
 <template>
   <div>
-    <div class="flex flex-row justify-end gap-4">
-      <UIButton label="Увійти" variant="rounded" @click="showLogin = true" />
+    <div v-if="!isAuthenticated" class="flex flex-row justify-end gap-2">
+      <UIButton label="Увійти" variant="rounded" @click="showLogin = true; user = true" />
       <UIButton label="Зареєструватись" variant="rounded" color="primary" @click="showSignUp = true" />
+    </div>
+    <div v-else>
+      <UIButton color="primary" variant="rounded" size="lg" @click="user = undefined">
+        <div class="flex flex-row justify-start items-center gap-2">
+          <p>{{ user }}</p>
+          <UIAvatar size="w-10" img="/img/signs/1.1.png" />
+        </div>
+      </UIButton>
     </div>
     <AuthLoginModal v-model:show="showLogin" @replace-modal="showSignUp = true" />
     <AuthSignUpModal v-model:show="showSignUp" @go-back="showLogin = true" />

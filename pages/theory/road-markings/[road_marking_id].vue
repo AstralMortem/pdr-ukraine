@@ -1,6 +1,9 @@
-<script setup lang="ts">
+<script setup lang="tsx">
+
 </script>
 
 <template>
-  <ContentDoc />
+  <div class="flex justify-center items-center">
+    <ContentDoc class="prose" />
+  </div>
 </template>

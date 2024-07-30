@@ -17,9 +17,9 @@ const schema = z.object({
 <template>
   <UIModal v-model:show="model" title="Вхід">
     <div class="flex flex-col items-center w-full gap-2">
-      <UIForm :schema="schema">
+      <UIForm :schema="schema" class="w-full flex flex-col justify-center items-center">
         <UIInput label="Email" name="email" placeholder="example@domain.com" type="email" leading-icon="ph:user" />
-        <div class="flex flex-col justify-center items-center gap-0.5">
+        <div class="flex flex-col justify-center items-center gap-0.5 w-full">
           <UIInput label="Password" name="password" placeholder="*****" leading-icon="ph:lock" type="password" />
           <p class="link self-end">
             Забули пароль?
@@ -33,7 +33,7 @@ const schema = z.object({
         />
       </UIForm>
       <UIDivider text="Або увійти через" />
-      <div class="flex flex-row justify-center items-center gap-4">
+      <div class="flex flex-col md:flex-row justify-center items-center gap-4">
         <UIButton leading-icon="ph:google-logo" color="error" label="Увійти через Google" />
         <UIButton leading-icon="ph:facebook-logo" color="info" label="Увійти через Facebook" />
       </div>
