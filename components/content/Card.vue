@@ -1,13 +1,11 @@
 <script lang="ts" setup>
-
+defineProps(['title'])
 </script>
 
 <template>
-  <div class="card bg-base-300 w-full ">
-    <div class="card-body">
-      <h2 class="card-title">
-        <slot name="title" />
-      </h2>
+  <div class="card bg-base-300 card-compact">
+    <div class="card-body prose">
+      <span class="text-lg font-bold">{{ $props.title }}</span>
       <slot />
     </div>
   </div>

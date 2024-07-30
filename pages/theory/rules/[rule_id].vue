@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <ContentDoc class="prose" />
+  <ContentDoc class="flex flex-col gap-3" />
 </template>
 
 <style>

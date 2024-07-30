@@ -10,8 +10,8 @@ defineProps({
 
 <template>
   <div class="avatar">
-    <div class="rounded-full" :class="[$props.size]">
-      <img :src="$props.src">
+    <div class="rounded-full flex justify-center items-center" :class="[$props.size]">
+      <img :src="$props.src" class="m-0 p-0">
     </div>
   </div>
 </template>
