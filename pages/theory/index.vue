@@ -25,7 +25,7 @@ const links = [{
 </script>
 
 <template>
-  <div class="flex flex-col justify-center items-center prose">
+  <div class="flex flex-col justify-center items-center prose w-full ">
     <h1>Теорія ПДР</h1>
     <h2>Теоретичний курс майбутнього водія</h2>
     <div class="flex flex-col gap-1 justify-center items-center w-full">

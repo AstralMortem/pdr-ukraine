@@ -15,6 +15,7 @@ const links = [{
 <template>
   <UIContainer>
     <NavBar :links="links" />
+    <UIBreadCrumb />
     <div class="w-full h-full mt-3">
       <slot />
     </div>

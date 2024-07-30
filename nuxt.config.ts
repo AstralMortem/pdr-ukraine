@@ -9,6 +9,8 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@nuxt/icon',
     '@nuxt/eslint',
-    "@nuxt/content"
+    "@nuxt/content",
+    "@nuxt/image",
+    "@nuxtjs/seo"
   ],
 })
